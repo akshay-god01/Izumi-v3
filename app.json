@@ -58,7 +58,7 @@
     "PREFIX": {
       "description": "Prefix for bot",
       "required": false,
-      "value": "."
+      "value": "!"
     },
     "AUTHOR": {
       "description": "Enter sticker pack author name",
