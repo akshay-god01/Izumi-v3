@@ -43,8 +43,8 @@ patterns.forEach(({ pattern, desc, type }) => {
 
           await message.reply(`_Downloading ${data.title}_`);
 
-          await message.sendMessage(message.jid, { audio: { url: downloadUrl }, mimetype: 'audio/mp4' }, { quoted: message.data });
-          await message.sendMessage(
+          await message.client.sendMessage(message.jid, { audio: { url: downloadUrl }, mimetype: 'audio/mp4' }, { quoted: message.data });
+          await message.client.sendMessage(
             message.jid,
             { document: { url: downloadUrl }, mimetype: 'audio/mpeg', fileName: `${data.title}.mp3`, caption:  `_${data.title}_`},
             { quoted: message.data }
@@ -55,7 +55,7 @@ patterns.forEach(({ pattern, desc, type }) => {
 
           await message.reply(`_Downloading ${data.title}_`);
 
-          await message.sendMessage(message.jid, { video: { url: videoUrl }, mimetype: 'video/mp4', fileName: `${data.title}.mp4` }, { quoted: message.data });
+          await message.client.sendMessage(message.jid, { video: { url: videoUrl }, mimetype: 'video/mp4', fileName: `${data.title}.mp4` }, { quoted: message.data });
         }
       } catch (e) {
         console.log(e);
